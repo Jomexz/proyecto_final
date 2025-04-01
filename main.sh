@@ -1,7 +1,7 @@
 #!/bin/bash
 # Menú interactivo principal del proyecto
 
-# Archivo de log para registrar actividad (opcional extra)
+# Archivo de log para registrar actividad 
 ACTIVITY_LOG="./logs/actividad.log"
 
 log_activity() {
