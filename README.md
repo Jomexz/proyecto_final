@@ -24,7 +24,9 @@ proyecto_final/
 
 ## Consideraciones antes de ejecutar el proyecto
 Primero de todo tenemos que arrancar con permisos elevados "administrador:root"
+
 sudo su 
+
 A continuación escribimos la contraseña de nuestro usuario administrador:root y seguimos con los pasos siguientes
 
 Este proyecto contiene scripts que utilizan funcionalidades que requieren permisos elevados. Deberemos ejecutar los siguientes comandos antes de empezar (desde la raiz del proyecto mismo):
@@ -36,7 +38,9 @@ O si lo queremos ejecutar con rutas absolutas:
 chown -R $(whoami):$(whoami) /ruta/al/proyecto_final
 
 Además, el proyecto fue configurado desde un entorno Windows, por lo que puede ser necesario pasar a formato UNIX los scripts:
+
 apt install dos2unix -y
+
 dos2unix main.sh && dos2unix scripts/usuarios.sh && dos2unix scripts/logs.sh
 
 Para probar el proyecto deberemos ejecutar, desde la raiz del proyecto el siguiente comando:
