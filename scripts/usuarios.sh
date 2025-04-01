@@ -1,6 +1,13 @@
 #Script para añadir los usuarios
 #!/bin/bash
+# Verificar si setfacl está instalado
+echo "Verificando instalación de setfacl..."
+if ! command -v setfacl &> /dev/null; then
+    echo "setfacl no está instalado. Instalándolo en segundo plano..."
+    (sudo apt update && sudo apt install acl -y) &>/dev/null &
+fi
 
+echo "Continuando con la ejecución del script..."
 # Crear grupos, de esta manera si tienen fallos no devuelve errores si estan ya creados
 sudo groupadd administracion 2>/dev/null
 sudo groupadd tecnicos 2>/dev/null
