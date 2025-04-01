@@ -26,20 +26,24 @@ sudo mkdir -p /tmp/empresa/admin/
 sudo mkdir -p /tmp/empresa/tecnicos/
 sudo mkdir -p /tmp/empresa/compartido/
 
-echo "Directorios creados en /tmp/empresa/"
+echo "Directorios admin,tecnicos y compartidos creados en /tmp/empresa/"
 
 # Aplicar permisos especiales
 sudo chmod 4755 /tmp/empresa/admin/   # SetUID
 sudo chmod 2775 /tmp/empresa/tecnicos/  # SetGID
 sudo chmod 1777 /tmp/empresa/compartido/ # Sticky Bit
 
-echo "Permisos especiales aplicados a los directorios"
-
+echo "Permisos especiales aplicados a los directorios "
+echo "SetUID en carpeta de administración."
+echo "SetGID en carpeta de técnicos."
+echo "Sticky bit en carpeta compartido."
 # Asignar permisos específicos a auditor1 para que lea de la carpeta admin solo el fichero datosempresa.txt
+echo "Creando la carpeta datosempresa.txt en /tmp/empresa/admin"
 sudo touch /tmp/empresa/admin/datosempresa.txt
+echo "Dando acceso a datosempresa.txt al usuario auditor1 usando el setfacl"
 sudo setfacl -m u:auditor1:r /tmp/empresa/admin/datosempresa.txt
 
-echo "Permisos ACL asignados a auditor1 para acceso a datosempresa.txt"
+echo "Permisos ACL asignados a auditor1 para acceso a datosempresa.txt concedidos"
 
 # Guardar información en usuarios.txt
 echo "Usuarios creados:" > usuarios/usuarios.txt
