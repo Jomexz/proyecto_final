@@ -7,6 +7,21 @@ Este proyecto tiene como objetivo automatizar tareas de mantenimiento en una emp
 - Automatizar tareas de backup, monitoreo y limpieza.
 - Utilizar un menú interactivo para acceder a todas las funcionalidades.
 
+## Estructura del proyecto
+proyecto_final/
+├── main.sh
+├── scripts/
+│   ├── usuarios.sh
+│   └── logs.sh
+├── logs/
+│   ├── eventos.log
+│   ├── informe_eventos.txt
+│   └── actividad.log
+├── respaldo/
+├── usuarios/
+│   └── estructura.txt
+└── README.md
+
 ## Consideraciones antes de ejecutar el proyecto
 Este proyecto contiene scripts que utilizan funcionalidades que requieren permisos elevados. Deberemos ejecutar los siguientes comandos antes de empezar (desde la raiz del proyecto mismo):
 
