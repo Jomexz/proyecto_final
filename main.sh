@@ -35,11 +35,15 @@ while true; do
             ;;
         3)
             log_activity "Iniciando backup simulado."
-            TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
-            DEST="respaldo/backup_$TIMESTAMP"
-            mkdir -p "$DEST"
-            cp -r /tmp/empresa "$DEST/"
-            echo "Backup realizado en $DEST"
+            if [ ! -d /tmp/empresa ]; then
+                echo "El directorio /tmp/empresa no existe. Por favor, ejecute la opción 1 para crear la estructura."
+            else
+                TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
+                DEST="respaldo/backup_$TIMESTAMP"
+                mkdir -p "$DEST"
+                cp -r /tmp/empresa "$DEST/"
+                echo "Backup realizado en $DEST"
+            fi
             read -p "Presione [Enter] para continuar..."
             ;;
         4)
@@ -50,7 +54,7 @@ while true; do
         5)
             log_activity "Limpieza de archivos temporales viejos."
             echo "Archivos temporales eliminados (archivos en /tmp con más de 7 días):"
-            find /tmp -type f -mtime +7 -exec rm -f {} \; -print
+            find /tmp -type f -mtime +7 -exec rm -f {} \; -print 2>/dev/null
             read -p "Presione [Enter] para continuar..."
             ;;
         6)
