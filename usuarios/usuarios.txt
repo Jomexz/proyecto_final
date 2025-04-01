@@ -1,0 +1,16 @@
+Usuarios creados:
+- admin1 (Grupo: administracion)
+- tecnico1 (Grupo: tecnicos)
+- auditor1 (Grupo: Ninguno, acceso específico con ACLs)
+
+Grupos creados:
+- administracion
+- tecnicos
+
+Estructura de directorios:
+- /tmp/empresa/admin/ (SetUID aplicado)
+- /tmp/empresa/tecnicos/ (SetGID aplicado)
+- /tmp/empresa/compartido/ (Sticky Bit aplicado)
+
+Permisos adicionales:
+- auditor1 tiene acceso específico a ciertos archivos mediante setfacl.
