@@ -54,7 +54,7 @@ while true; do
         5)
             log_activity "Limpieza de archivos temporales viejos."
             echo "Archivos temporales eliminados (archivos en /tmp con más de 7 días):"
-            find /tmp -type f -mtime +7 -exec rm -f {} \; -print
+            find /tmp -type f -mtime +7 -exec rm -f {} \; -print 2>/dev/null
             read -p "Presione [Enter] para continuar..."
             ;;
         6)
