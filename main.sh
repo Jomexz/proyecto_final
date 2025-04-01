@@ -35,11 +35,15 @@ while true; do
             ;;
         3)
             log_activity "Iniciando backup simulado."
-            TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
-            DEST="respaldo/backup_$TIMESTAMP"
-            mkdir -p "$DEST"
-            cp -r /tmp/empresa "$DEST/"
-            echo "Backup realizado en $DEST"
+            if [ ! -d /tmp/empresa ]; then
+                echo "El directorio /tmp/empresa no existe. Por favor, ejecute la opción 1 para crear la estructura."
+            else
+                TIMESTAMP=$(date '+%Y%m%d_%H%M%S')
+                DEST="respaldo/backup_$TIMESTAMP"
+                mkdir -p "$DEST"
+                cp -r /tmp/empresa "$DEST/"
+                echo "Backup realizado en $DEST"
+            fi
             read -p "Presione [Enter] para continuar..."
             ;;
         4)
