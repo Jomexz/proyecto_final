@@ -19,3 +19,7 @@ sudo chown -R $(whoami):$(whoami) /ruta/al/proyecto_final
 Además, el proyecto fue configurado desde un entorno Windows, por lo que puede ser necesario pasar a formato UNIX los scripts:
 
 dos2unix main.sh && dos2unix scripts/usuarios.sh && dos2unix scripts/logs.sh
+
+Para probar el proyecto deberemos ejecutar, desde la raiz del proyecto el siguiente comando:
+
+./main.sh
